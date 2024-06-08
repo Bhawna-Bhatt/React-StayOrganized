@@ -2,18 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import HomePage from "./components/HomePage";
 import reportWebVitals from "./reportWebVitals";
 import ErrorBoundary from "./ErrorBoundary";
 import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <ErrorBoundary>
     <BrowserRouter>
       <React.StrictMode>
+        <Header />
+        {/* <HomePage /> */}
         <App />
+        <Footer />
       </React.StrictMode>
     </BrowserRouter>
   </ErrorBoundary>

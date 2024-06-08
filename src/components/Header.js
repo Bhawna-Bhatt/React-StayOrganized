@@ -1,10 +1,10 @@
 import React from "react";
-import SiteLogo from "./image/Stay Organized_transparent.png";
+import SiteLogo from "../image/Stay Organized_transparent.png";
 export default function Header() {
   return (
     <>
-      <header>
-        <div className="navbar navbar-expand-lg container-fluid">
+      <header className="myheader">
+        <div className="navbar navbar-expand-lg container-fluid navbar-light">
           <div className="container-fluid mynavclass">
             <img alt="SiteLogo" src={SiteLogo} width="100" height="100" />
 
@@ -51,7 +51,10 @@ export default function Header() {
                 placeholder="Search"
               ></input>
 
-              <button className="btn btn-outline-success" type="submit">
+              <button
+                className="btn btn-outline-dark bg-secondary"
+                type="submit"
+              >
                 Search
               </button>
             </form>

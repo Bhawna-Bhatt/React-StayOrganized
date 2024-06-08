@@ -1,25 +1,23 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Footer from "./Footer";
-import Header from "./Header";
-import ViewToDo from "./ViewToDo";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import ViewToDo from "./components/ViewToDo";
 import AddToDo from "./AddToDo";
-import ToDoDetail from "./ToDoDetail";
-import RegisterUser from "./RegisterUser";
-import TestFetch from "./TestFetch";
+import ToDoDetail from "./components/ToDoDetail";
+import RegisterUser from "./components/RegisterUser";
+import TestFetch from "./services/TestFetch";
+import HomePage from "./components/HomePage";
 
 export default function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="content">
         <main>
           <Routes>
-            <Route
-              path="/"
-              element={<h1>Welcome to Stay Organized Website</h1>}
-            />
+            <Route path="/" element={<HomePage />} />
             <Route path="/viewtodo" element={<ViewToDo />} />
             <Route path="/addtodo" element={<AddToDo />} />
             <Route path="/tododetail" element={<ToDoDetail />} />
@@ -27,8 +25,8 @@ export default function App() {
           </Routes>
         </main>
       </div>
-      <TestFetch />
-      <Footer />
+      {/* <TestFetch /> */}
+      {/* <Footer /> */}
     </>
   );
 }
