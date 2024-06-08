@@ -1,14 +1,15 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+//import Footer from "./components/Footer";
+//import Header from "./components/Header";
 import ViewToDo from "./components/ViewToDo";
 import AddToDo from "./AddToDo";
 import ToDoDetail from "./components/ToDoDetail";
 import RegisterUser from "./components/RegisterUser";
-import TestFetch from "./services/TestFetch";
+//import TestFetch from "./services/TestFetch";
 import HomePage from "./components/HomePage";
+import EditTasks from "./components/EditTasks";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/addtodo" element={<AddToDo />} />
             <Route path="/tododetail" element={<ToDoDetail />} />
             <Route path="/registeruser" element={<RegisterUser />} />
+            <Route path="/edittasks" element={<EditTasks />} />
           </Routes>
         </main>
       </div>

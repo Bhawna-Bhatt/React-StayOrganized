@@ -5,9 +5,9 @@ import sitelogo from "../image/Stay Organized_transparent.png";
 export default function HomePage() {
   return (
     <>
-      <div class="d-flex mt-4">
-        <div class="col-lg-5">
-          <div class="card text-white mt-3 ms-5">
+      <div className="d-flex mt-4">
+        <div className="col-lg-5">
+          <div className="card text-white mt-3 ms-5">
             <img
               src={todolistimg}
               className="card-img"
@@ -22,21 +22,21 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div class="col-lg-5">
-          <div class="v-stack bg-white container">
+        <div className="col-lg-5">
+          <div className="v-stack bg-white container">
             <img
               src={sitelogo}
               alt="Sitelogo"
               width="400"
               height="300"
-              class="mx-auto d-block"
+              className="mx-auto d-block"
             ></img>
           </div>
         </div>
       </div>
 
-      <div class="container mt-4">
-        <p class="lead">
+      <div className="container mt-4">
+        <p className="lead">
           Welcome to Stay Organized, your digital haven for mastering the art of
           efficiency and decluttering. Seamlessly blending intuitive design with
           powerful functionality, our website empowers users to streamline their

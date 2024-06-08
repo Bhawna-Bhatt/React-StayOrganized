@@ -17,7 +17,6 @@ export default function ViewToDo() {
 
   return (
     <>
-      <h2>Your To-do List</h2>
       <div className="container mymaincontainer">
         <div className="dropdown text-center mt-3 mb-3">
           <select
