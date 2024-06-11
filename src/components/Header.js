@@ -31,11 +31,11 @@ export default function Header() {
                     Your To-dos
                   </a>
                 </li>
-                <li className="nav-item ms-5">
+                {/* <li className="nav-item ms-5">
                   <a href="/addtodo" className="nav-link">
                     Add a Task
                   </a>
-                </li>
+                </li> */}
                 <li className="nav-item ms-5">
                   <a href="/registeruser" className="nav-link">
                     Register

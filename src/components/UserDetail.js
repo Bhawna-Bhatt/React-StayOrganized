@@ -26,7 +26,7 @@ export default function UserDetail({ userid }) {
                   }}
                 > */}
                   <button type="button" className="btn btn-success m-2">
-                    {x.id} {x.userid}
+                    See Details
                   </button>
                 </Link>
               </div>
@@ -35,7 +35,7 @@ export default function UserDetail({ userid }) {
                 <strong>{x.description}</strong>
               </p>
               <p className="card-header border border-success">
-                <strong>{x.deadline}</strong>
+                <strong>Complete by : {x.deadline}</strong>
               </p>
               {/* <p className="card-header border border-success">
                 <strong>{x.priority}</strong>

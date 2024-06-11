@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../services/useFetch";
 import UserDetail from "./UserDetail";
+import { Link } from "react-router-dom";
 
 export default function ViewToDo() {
   const [userid, setUserid] = useState("1");
@@ -30,20 +31,9 @@ export default function ViewToDo() {
             ))}
           </select>
           <UserDetail userid={userid} />
-          {/* <div id="detailOfuser" className="card-deck">
-            <div className="card">
-              {userList.map((x) => (
-                <div class="card-body">
-                  <p class="card-text"> {x.category}</p>
-                  <p class="card-text"> {x.description}</p>
-                  <p class="card-text"> {x.deadline}</p>
-                  <p class="card-text"> {x.priority}</p>
-                  <p class="card-text"> {x.completed}</p>
-                </div>
-              ))}
-              <div />
-            </div>
-          </div> */}
+          <Link to="/addtodo" state={userid}>
+            <button className="btn btn-success m-3 ">Add a New Task</button>
+          </Link>
         </div>
       </div>
     </>

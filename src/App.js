@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 //import Footer from "./components/Footer";
 //import Header from "./components/Header";
 import ViewToDo from "./components/ViewToDo";
-import AddToDo from "./AddToDo";
+import AddToDo from "./components/AddToDo";
 import ToDoDetail from "./components/ToDoDetail";
 import RegisterUser from "./components/RegisterUser";
 //import TestFetch from "./services/TestFetch";
