@@ -1,17 +1,29 @@
-#"Stay Organized" - React Rework
-###This react app contains the following pages
--A home page that highlights our "Stay Organized" website -![Home Page](/Users/bhawna-bhatt/Academy/7/react-capstone/stay-organized-react/src/image/HomePage.jpg)
--A View ToDos page that displays all ToDos for a user by picking the user from a dropdown
-![View User Page](/Users/bhawna-bhatt/Academy/7/react-capstone/stay-organized-react/src/image/ViewUser.jpg)
--NEW: A ToDo Details page that allows the user to view and edit ToDo details.  See details below.
-![To do Page](/Users/bhawna-bhatt/Academy/7/react-capstone/stay-organized-react/src/image/EditTaskPage.jpg)
--An Add ToDo page that allows the user to add a ToDo 
-![Add New To do](/Users/bhawna-bhatt/Academy/7/react-capstone/stay-organized-react/src/image/AddNewTaskPage.jpg)
--A Register New User page that allows a new user to register for our services  -![Register User](/Users/bhawna-bhatt/Academy/7/react-capstone/stay-organized-react/src/image/RegisterUser.jpg)
+# "Stay Organized" - React Rework
+### This react app contains the following pages
+***
+- A home page that highlights our "Stay Organized" website -
+  ***
+ ![Home Page](/src/image/HomePage.jpg)
+***
+- A View ToDos page that displays all ToDos for a user by picking the user from a dropdown
+***
+![View User Page](/src/image/ViewUser.jpg)
+***
+- A ToDo Details page that allows the user to view and edit ToDo details.  See details below.
+  ***
+![To do Page](/src/image/EditTaskPage.jpg)
+***
+- An Add ToDo page that allows the user to add a ToDo
+  ***
+![Add New To do](/src/image/AddNewTaskPage.jpg)
+***
+- A Register New User page that allows a new user to register for our services
+  ***
+   ![Register User](/src/image/RegisterUser.jpg)
 
----
+------
 
----
+-----
 
 # Getting Started with Create React App
 
