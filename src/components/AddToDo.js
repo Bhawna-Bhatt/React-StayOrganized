@@ -6,10 +6,11 @@ export default function AddToDo() {
   console.log(location.state);
 
   const [userid, setUserID] = useState(location.state);
+  const [categoryname, setCategoryName] = useState("");
   const [category, setCategory] = useState([]);
-  // const [description, setDescription] = useState(location.state.description);
-  // const [deadline, setDeadline] = useState(location.state.deadline);
-  // const [priority, setPriority] = useState(location.state.priority);
+  const [description, setDescription] = useState("");
+  const [deadline, setDeadline] = useState("");
+  const [priority, setPriority] = useState("");
   console.log(userid);
   useEffect(() => {
     //
@@ -22,6 +23,28 @@ export default function AddToDo() {
 
     //
   }, []);
+
+  function AddNewTodo() {
+    console.log("in new add to do");
+    fetch("http://localhost:8083/api/todos", {
+      method: "POST",
+      body: JSON.stringify({
+        userid: userid,
+        category: categoryname,
+        description: description,
+        deadline: deadline,
+        priority: priority,
+      }),
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        alert("Task Added successfully");
+      })
+      .catch((err) => {
+        console.log("Oh no! There was a problem.Try again ", err);
+      });
+  }
 
   console.log("we", { category });
 
@@ -46,15 +69,20 @@ export default function AddToDo() {
             {/* <datalist id="userlist"></datalist> */}
           </div>
           <div className="form-group mb-2 text-success fw-bold">
-            <label for="category">Category : </label>
-            <input
+            <label>Category : </label>
+            <select onChange={(e) => setCategoryName(e.target.value)}>
+              {category.map((x) => (
+                <option>{x.name}</option>
+              ))}
+            </select>
+            {/* <input
               list="categorylist"
               className="form-control"
               name="category"
               id="category"
               placeholder="Please select the category"
             />
-            <datalist id="categorylist"></datalist>
+            <datalist id="categorylist"></datalist> */}
           </div>
           <div className="form-group mb-2 text-success fw-bold">
             <label for="description">Description : </label>
@@ -63,6 +91,7 @@ export default function AddToDo() {
               name="description"
               id="description"
               placeholder="Task Details"
+              onChange={(e) => setDescription(e.target.value)}
             ></textarea>
           </div>
           <div className="form-group mb-2 text-success fw-bold">
@@ -73,30 +102,30 @@ export default function AddToDo() {
               name="deadline"
               id="deadline"
               min="2024-06-13"
+              onChange={(e) => setDeadline(e.target.value)}
             />
           </div>
           <div className="form-group mb-2 text-success fw-bold">
             <label for="priority">Priority : </label>
-            <input
-              list="prioritylist"
-              className="form-control"
+
+            <select
+              id="prioritylist"
               name="priority"
-              id="priority"
-              placeholder="Please select the priority"
-            />
-            <datalist id="prioritylist">
-              <option value="High"></option>
-              <option value="Medium"></option>
-              <option value="Low"></option>
-            </datalist>
+              onChange={(e) => setPriority(e.target.value)}
+            >
+              <option>High</option>
+              <option>Medium</option>
+              <option>Low</option>
+            </select>
           </div>
 
           <div>
             <button
-              type="submit"
+              type="button"
               className="btn btn-lg btn-success mt-3 me-0"
               name="addToDo"
               id="addToDo"
+              onClick={AddNewTodo}
             >
               Add New Task
             </button>

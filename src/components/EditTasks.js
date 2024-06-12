@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function EditTasks() {
   const location = useLocation();
   const [disableInput, setDisableInput] = useState(true);
   const [disablecompleted, setDisableCompleted] = useState("hidden");
+  const navigate = useNavigate();
 
   //console log for to check if we received value via link
 
@@ -41,7 +42,9 @@ export default function EditTasks() {
     })
       .then((response) => response.json())
       .then((json) => {
-        alert("Task Added successfully");
+        console.log("task added");
+        alert("Task Changed successfully");
+        navigate(-1);
       })
       .catch((err) => {
         // If the PUT returns an error, ...
@@ -62,6 +65,7 @@ export default function EditTasks() {
       .then((json) => {
         // If the DELETE is successful, display a message
         alert("Task deleted");
+        navigate(-1);
       })
       .catch((err) => {
         // If the DELETE returns an error, display a message
@@ -103,7 +107,7 @@ export default function EditTasks() {
               value={deadline}
               disabled={disableInput}
               style={{ width: "300px" }}
-              className="bg-warning text-dark fw-bolder fs-6 ms-3"
+              className="bg-warning text-dark fw-bolder fs-6 ms-"
               onChange={(e) => setDeadline(e.target.value)}
             />
           </div>
@@ -132,7 +136,7 @@ export default function EditTasks() {
             <input
               value={completed}
               disabled={disableInput}
-              type={disablecompleted}
+              //type={disablecompleted}
               style={{ width: "300px" }}
               className="bg-warning"
               onChange={(e) => setCompleted(e.target.value)}

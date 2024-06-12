@@ -20,7 +20,7 @@ export default function HomeAnimation() {
 
   return (
     <>
-      <div className="text-success myanimation">
+      <div className="text-warning myanimation">
         <h3> Active Users : {userNum} </h3>
         <h3> Active Tasks :{todoNum} </h3>
       </div>

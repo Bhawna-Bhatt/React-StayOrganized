@@ -1,10 +1,12 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function validateUser() {
     fetch("http://localhost:8083/api/users", {
@@ -19,10 +21,14 @@ export default function Register() {
       .then((response) => response.json())
       .then((json) => {
         // If the POST finishes successfully, display a message
-        alert("New User added");
+        console.log(json.ok);
+        alert("New User Updated!");
+
+        navigate("/viewtodo");
       })
       .catch((err) => {
         // If the POST returns an error, display a message
+        console.log(err);
         alert("Unexpected error", err);
       });
   }
@@ -38,7 +44,7 @@ export default function Register() {
           >
             <div className="ms-5 mt-5 form-group ">
               <div className="m-2">
-                <label for="name" class="form-label mt-2">
+                <label className="form-label mt-2">
                   <strong className="me-3" style={{ width: "300px" }}>
                     Name :{" "}
                   </strong>
@@ -51,11 +57,10 @@ export default function Register() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                 />
-                <div class="invalid-feedback"> Please fill a valid name </div>
               </div>
 
               <div className="m-2">
-                <label for="username" class="form-label mt-2">
+                <label className="form-label mt-2">
                   <strong className="me-3" style={{ width: "300px" }}>
                     Username :{" "}
                   </strong>
@@ -68,11 +73,10 @@ export default function Register() {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
-                <div class="invalid-feedback"> Please fill a valid user</div>
               </div>
 
-              <div class="m-2">
-                <label for="password" class="formlablel mt-2">
+              <div className="m-2">
+                <label className="formlablel mt-2">
                   <strong className="me-3" style={{ width: "300px" }}>
                     Password :{" "}
                   </strong>
@@ -85,15 +89,11 @@ export default function Register() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <div class="invalid-feedback">
-                  {" "}
-                  Please fill a valid password{" "}
-                </div>
               </div>
 
               <div className="ms-1 mt-5 mb-3">
                 <button
-                  type="submit"
+                  type="button"
                   className="btn btn-lg btn-success mybutton"
                   onClick={validateUser}
                 >

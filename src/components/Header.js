@@ -44,7 +44,7 @@ export default function Header() {
               </ul>
             </div>
 
-            <form className="d-flex me-0" role="search">
+            {/* <form className="d-flex me-0" role="search">
               <input
                 type="search"
                 className="form-control me-2"
@@ -57,7 +57,7 @@ export default function Header() {
               >
                 Search
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
       </header>
